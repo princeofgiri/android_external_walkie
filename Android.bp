@@ -1,0 +1,29 @@
+//
+// SPDX-FileCopyrightText: 2026 SymbiotOS
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app_import {
+    name: "WalkieTalkie",
+    apk: "WalkieTalkie.apk",
+    // Resign with SymbiotOS platform key (APK ships signed with vendor key
+    // from Tintele/Tintel — resigning aligns it with our framework
+    // so signature-protected permissions match the platform).
+    certificate: "platform",
+    privileged: true,
+    optional_uses_libs: [
+        "androidx.window.extensions",
+        "androidx.window.sidecar",
+    ],
+    dex_preopt: {
+        enabled: false,
+    },
+    required: ["privapp-permissions-com.android.walkietalkie.xml"],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-com.android.walkietalkie.xml",
+    src: "privapp-permissions-com.android.walkietalkie.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+}

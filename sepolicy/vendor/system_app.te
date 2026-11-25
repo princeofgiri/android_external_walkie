@@ -1,0 +1,12 @@
+# Walkie-Talkie intercom app (com.android.walkietalkie)
+# Runs as system_app (UID 1000) and needs access to:
+# - /dev/intercom_device for hardware radio communication
+
+# Allow searching /dev/input directory
+allow system_app input_device:dir search;
+
+# Note: direct input_device:chr_file is disallowed by AOSP neverallow (app.te:708).
+# Key events (PTT, SOS, Channel knobs) are handled via framework keylayout (mtk-kpd.kl).
+
+# Allow access to intercom device
+allow system_app intercom_device:chr_file rw_file_perms;

@@ -1,0 +1,5 @@
+# Walkie-Talkie intercom device access
+# Legacy rule kept for compatibility. The WalkieTalkie app actually runs as
+# system_app (not system_server), but intercom_device access via system_app
+# is granted in system_app.te.
+allow system_server intercom_device:chr_file rw_file_perms;

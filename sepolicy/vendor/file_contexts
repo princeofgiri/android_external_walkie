@@ -1,0 +1,2 @@
+# Walkie-Talkie intercom device
+/dev/intercom_device    u:object_r:intercom_device:s0

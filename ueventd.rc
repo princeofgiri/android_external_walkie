@@ -1,0 +1,5 @@
+# Walkie-Talkie intercom device
+/dev/intercom_device    0660    system    system
+
+# Walkie-Talkie UART serial (ttyS0)
+/dev/ttyS0              0660    system    system
